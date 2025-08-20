@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Twitter, Mail, ExternalLink, MapPin } from "lucide-react";
-import profilePhoto from "@/assets/profile-photo.jpg";
 
 const Portfolio = () => {
   const projects = [
@@ -71,11 +70,9 @@ const Portfolio = () => {
       <section className="relative py-20 px-4 gradient-hero">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <div className="mb-8">
-            <img
-              src={profilePhoto}
-              alt="John Developer"
-              className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg object-cover"
-            />
+            <div className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl font-bold text-primary-foreground">
+              JD
+            </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               John Developer
             </h1>
