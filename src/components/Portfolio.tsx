@@ -1,7 +1,8 @@
 import {Button} from "@/components/ui/button";
 import {Card} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
-import {ExternalLink, Github, Linkedin, Mail, MapPin, Twitter} from "lucide-react";
+import {ExternalLink, Github, Linkedin, Mail, MapPin} from "lucide-react";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const Portfolio = () => {
   const projects = [
@@ -70,49 +71,44 @@ const Portfolio = () => {
         <section className="relative py-20 px-4 gradient-hero">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <div className="mb-8">
-              <div
-                  className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl font-bold text-primary-foreground">
-                JD
-              </div>
+              <img
+                  src={profilePhoto}
+                  alt="Tarik Arnaut"
+                  className="w-32 h-32 rounded-full mx-auto mb-6 shadow-lg object-cover"
+              />
               <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                John Developer
+                Tarik Arnaut
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-2">
-                Full Stack Software Developer
+                Software Engineer
               </p>
               <div className="flex items-center justify-center gap-2 text-muted-foreground mb-8">
                 <MapPin className="w-4 h-4"/>
-                <span>San Francisco, CA</span>
+                <span>Bosnia and Herzegovina</span>
               </div>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-                Passionate about creating innovative web applications and solving complex problems
-                with clean, efficient code.
-                I specialize in React, Node.js, and modern web technologies with over 5 years of
-                experience.
+                Hello, my name is Tarik and I am a software engineer with 4 years of experience.
+                I have a Bachelor's Degree in IT and a Master's Degree in IT Business Intelligence.
+                My current stack is Java, Spring Boot, Docker, K8s, Kafka, RMQ.
+                Occasionally I work in Python and R also.
               </p>
             </div>
 
             {/* Social Links */}
             <div className="flex justify-center gap-4 mb-8">
               <Button variant="social" size="icon" asChild>
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/tare99" target="_blank" rel="noopener noreferrer">
                   <Github className="w-5 h-5"/>
                 </a>
               </Button>
               <Button variant="social" size="icon" asChild>
-                <a href="https://linkedin.com/in/yourusername" target="_blank"
+                <a href="https://linkedin.com/in/tarik-arnaut-ab41b8198" target="_blank"
                    rel="noopener noreferrer">
                   <Linkedin className="w-5 h-5"/>
                 </a>
               </Button>
               <Button variant="social" size="icon" asChild>
-                <a href="https://twitter.com/yourusername" target="_blank"
-                   rel="noopener noreferrer">
-                  <Twitter className="w-5 h-5"/>
-                </a>
-              </Button>
-              <Button variant="social" size="icon" asChild>
-                <a href="mailto:john@example.com">
+                <a href="mailto:tarearnaut@gmail.com">
                   <Mail className="w-5 h-5"/>
                 </a>
               </Button>
@@ -223,7 +219,7 @@ const Portfolio = () => {
               Feel free to reach out if you'd like to collaborate or just say hello!
             </p>
             <Button variant="gradient" size="lg" asChild>
-              <a href="mailto:john@example.com">Get In Touch</a>
+              <a href="mailto:tarearnaut@gmail.com">Get In Touch</a>
             </Button>
           </div>
         </section>
@@ -231,7 +227,7 @@ const Portfolio = () => {
         {/* Footer */}
         <footer className="py-8 px-4 border-t">
           <div className="max-w-4xl mx-auto text-center text-muted-foreground">
-            <p>&copy; 2024 John Developer. Built with React & Tailwind CSS.</p>
+            <p>&copy; 2025 Tarik Arnaut - All rights reserved</p>
           </div>
         </footer>
       </div>
