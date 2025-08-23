@@ -1,68 +1,34 @@
 import {Button} from "@/components/ui/button";
 import {Card} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
-import {ExternalLink, Github, Linkedin, Mail, MapPin} from "lucide-react";
+import {Github, Linkedin, Mail, MapPin} from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Docker"],
-      link: "https://github.com/yourusername/ecommerce-platform",
-      demo: "https://ecommerce-demo.vercel.app"
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description: "Real-time task management application with team collaboration features. Built with React, Firebase, and Material-UI.",
-      technologies: ["React", "Firebase", "Material-UI", "TypeScript"],
-      link: "https://github.com/yourusername/task-manager",
-      demo: "https://taskmanager-demo.vercel.app"
-    },
-    {
-      id: 3,
-      title: "Weather Dashboard",
-      description: "Interactive weather dashboard with data visualization and location-based forecasts. Integrated with multiple weather APIs.",
-      technologies: ["Vue.js", "Chart.js", "REST APIs", "Tailwind CSS"],
-      link: "https://github.com/yourusername/weather-dashboard",
-      demo: "https://weather-demo.netlify.app"
+      title: "Kanban Task Manager",
+      description: "A simple Kanban API that lets you store, update, patch and delete tasks. It is using WebSocket to send updates to the frontend.",
+      technologies: ["Java", "Spring Boot", "MySQL", "WebSocket", "Docker", "GraphQL", "Spring Security"],
+      link: "https://github.com/tare99/kanban-task-manager-api"
     }
   ];
 
   const experiences = [
     {
       id: 1,
-      company: "TechCorp Solutions",
-      role: "Senior Frontend Developer",
+      company: "Sportradar - NSoft",
+      role: "Backend Developer",
       period: "2022 - Present",
-      location: "San Francisco, CA",
-      description: "Lead development of customer-facing web applications serving 100K+ users. Implemented modern React patterns and improved performance by 40%."
-    },
-    {
-      id: 2,
-      company: "StartupXYZ",
-      role: "Full Stack Developer",
-      period: "2020 - 2022",
-      location: "Austin, TX",
-      description: "Built and maintained the core product from MVP to 10K+ users. Worked on both frontend (React) and backend (Node.js) development."
-    },
-    {
-      id: 3,
-      company: "Digital Agency Pro",
-      role: "Frontend Developer",
-      period: "2019 - 2020",
-      location: "Remote",
-      description: "Developed responsive websites and web applications for various clients. Specialized in React, Vue.js, and modern CSS frameworks."
+      location: "Bosnia and Herzegovina",
+      description: "Developed All-In-One Sportsbook feed to support streaming thousands of sport matches a day. Developed payment processors and aggregators with over 10M+ transactions a day. Main stack: Java, Spring Boot, Kafka, RMQ, K8s."
     }
   ];
 
   const skills = [
-    "JavaScript", "TypeScript", "React", "Vue.js", "Node.js",
-    "Python", "PostgreSQL", "MongoDB", "AWS", "Docker",
-    "GraphQL", "REST APIs", "Git", "CI/CD"
+    "Java", "Spring Boot", "Kafka (Debezium)", "Microservices", "K8s",
+    "Docker", "MySQL", "Jenkins", "Python", "R"
   ];
 
   return (
@@ -90,7 +56,7 @@ const Portfolio = () => {
                 Hello, my name is Tarik and I am a software engineer with 4 years of experience.
                 I have a Bachelor's Degree in IT and a Master's Degree in IT Business Intelligence.
                 My current stack is Java, Spring Boot, Docker, K8s, Kafka, RMQ.
-                Occasionally I work in Python and R also.
+                Also, I occasionally work in Python and R.
               </p>
             </div>
 
@@ -119,7 +85,7 @@ const Portfolio = () => {
                 <a href="#projects">View My Work</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="mailto:john@example.com">Get In Touch</a>
+                <a href="mailto:tarearnaut@gmail.com">Get In Touch</a>
               </Button>
             </div>
           </div>
@@ -167,12 +133,6 @@ const Portfolio = () => {
                         <a href={project.link} target="_blank" rel="noopener noreferrer">
                           <Github className="w-4 h-4 mr-2"/>
                           Code
-                        </a>
-                      </Button>
-                      <Button variant="default" size="sm" asChild>
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4 mr-2"/>
-                          Demo
                         </a>
                       </Button>
                     </div>
