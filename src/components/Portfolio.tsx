@@ -1,6 +1,12 @@
 import {Button} from "@/components/ui/button";
 import {Card} from "@/components/ui/card";
 import {Badge} from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import {Github, Linkedin, Mail, MapPin} from "lucide-react";
 import profilePhoto from "@/assets/profile-photo.png";
 
@@ -18,17 +24,29 @@ const Portfolio = () => {
   const experiences = [
     {
       id: 1,
-      company: "Sportradar - NSoft",
+      company: "Sportradar",
       role: "Backend Developer",
       period: "2022 - Present",
       location: "Bosnia and Herzegovina",
-      description: "Developed All-In-One Sportsbook feed to support streaming thousands of sport matches a day. Developed payment processors and aggregators with over 10M+ transactions a day. Main stack: Java, Spring Boot, Kafka, RMQ, K8s."
+      description: [
+        "Built, shipped, and maintained Java-based microservices in production. Designed and developed backend systems in close collaboration with product managers, owning both domain and architectural decisions.",
+        "Integrated high risk money transactions and wallet integrations (debit, credit, refund) between client system and in-house wallet services with multi-tenant support.",
+        "Implemented a transaction aggregation system that collected all client transactions, applied business logic, and forwarded events to a central gamification platform using Kafka CDC.",
+        "Integrated a live and pre-match sports odds feed, streaming and transforming real-time updates into an internally developed feed library. Designed and built the feed library with multi-feed support, including recovery, caching, and delta-based update processing. Feed library was developed using pure Java.",
+        "Built a provider-agnostic bonus aggregation system for casino games, handling player and game assignment for bonus distribution. Abstracted provider-specific APIs behind a unified interface, allowing clients to manage bonuses without awareness of underlying provider differences.",
+        "Developed admin-facing REST API for managing sports events, markets, and outcomes. User could fetch existing feed events and create new custom events and assign odds to them.",
+        "Integrated payment systems like Monri, Payten, Payspot, C-Pay, Chapa, VCash, etc."
+      ]
     }
   ];
 
   const skills = [
-    "Java", "Spring Boot", "Kafka (Debezium)", "Microservices", "K8s",
-    "Docker", "MySQL", "Jenkins", "Python", "R"
+    "Java", "JavaScript", "Python", "C++", "R",
+    "Spring/Spring Boot", "Spring Security", "Maven", "JPA/Hibernate", "Flyway",
+    "MySQL/PostgreSQL", "JUnit/Mockito/Testcontainers", "Vault", "Jenkins",
+    "Kubernetes/Helm", "Docker", "Kafka (Streams, Connect, Debezium)",
+    "Grafana/Graylog/Prometheus", "Copilot", "Shell/Bash scripting", "IntelliJ",
+    "CI/CD", "REST", "Agile", "Automation"
   ];
 
   return (
@@ -46,17 +64,14 @@ const Portfolio = () => {
                 Tarik Arnaut
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground mb-2">
-                Software Engineer
+                Software Engineer, MSc IT & Business Intelligence
               </p>
               <div className="flex items-center justify-center gap-2 text-muted-foreground mb-8">
                 <MapPin className="w-4 h-4"/>
                 <span>Bosnia and Herzegovina</span>
               </div>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-                Hello, my name is Tarik and I am a software engineer with 4 years of experience.
-                I have a Bachelor's Degree in IT and a Master's Degree in IT Business Intelligence.
-                My current stack is Java, Spring Boot, Docker, K8s, Kafka, RMQ.
-                Also, I occasionally work in Python and R.
+                Hello there! My name is Tarik and I'm a software developer with experience in delivering secure, scalable & production-ready solutions.
               </p>
             </div>
 
@@ -110,7 +125,7 @@ const Portfolio = () => {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-16 px-4 bg-surface">
+        {/* <section id="projects" className="py-16 px-4 bg-surface">
           <div className="max-w-6xl mx-auto animate-slide-up">
             <h2 className="text-3xl font-bold text-center mb-12">Featured Projects</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -140,10 +155,10 @@ const Portfolio = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Experience Section */}
-        <section className="py-16 px-4">
+        <section className="py-16 px-4 bg-surface">
           <div className="max-w-4xl mx-auto animate-slide-up">
             <h2 className="text-3xl font-bold text-center mb-12">Work Experience</h2>
             <div className="space-y-8">
@@ -153,7 +168,7 @@ const Portfolio = () => {
                         className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
                       <div>
                         <h3 className="text-xl font-semibold">{exp.role}</h3>
-                        <p className="text-primary font-medium">{exp.company}</p>
+                        <p className="text-primary font-medium"><a href="https://sportradar.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{exp.company}</a></p>
                       </div>
                       <div className="text-sm text-muted-foreground">
                         <p>{exp.period}</p>
@@ -163,15 +178,44 @@ const Portfolio = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+                    <Accordion type="single" collapsible className="w-full">
+                      <AccordionItem value="details" className="border-b-0">
+                        <AccordionTrigger className="py-2 hover:no-underline text-sm text-muted-foreground">
+                          View Details
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <ul className="list-disc pl-5 space-y-2 mt-2 text-muted-foreground">
+                            {Array.isArray(exp.description) ? (
+                                exp.description.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))
+                            ) : (
+                                <li>{exp.description}</li>
+                            )}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
                   </Card>
               ))}
             </div>
           </div>
         </section>
 
+        {/* Publications Section */}
+        <section className="py-16 px-4">
+          <div className="max-w-4xl mx-auto animate-slide-up">
+            <h2 className="text-3xl font-bold text-center mb-12">Publications</h2>
+            <Card className="p-6">
+              <p className="text-muted-foreground leading-relaxed">
+                Arnaut et al. (2026) — From Restricted Boltzmann Machines to Deep Belief Networks: A Multi-dataset Performance Study, in Advanced Technologies, Systems and Applications X (IAT 2025), <a href="https://link.springer.com/chapter/10.1007/978-3-032-05159-2_6" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Springer</a>.
+              </p>
+            </Card>
+          </div>
+        </section>
+
         {/* Contact Section */}
-        <section className="py-16 px-4 bg-surface text-center">
+        <section className="py-16 px-4 text-center bg-surface">
           <div className="max-w-2xl mx-auto animate-slide-up">
             <h2 className="text-3xl font-bold mb-6">Let's Work Together</h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
@@ -195,3 +239,4 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
