@@ -96,10 +96,10 @@ const Portfolio = () => {
             </div>
 
             <div className="flex justify-center gap-4">
+              {/*<Button variant="gradient" size="lg" asChild>*/}
+              {/*  <a href="#projects">View My Work</a>*/}
+              {/*</Button>*/}
               <Button variant="gradient" size="lg" asChild>
-                <a href="#projects">View My Work</a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
                 <a href="mailto:tarearnaut@gmail.com">Get In Touch</a>
               </Button>
             </div>
@@ -184,7 +184,7 @@ const Portfolio = () => {
                           View Details
                         </AccordionTrigger>
                         <AccordionContent>
-                          <ul className="list-disc pl-5 space-y-2 mt-2 text-muted-foreground">
+                          <ul className="list-disc pl-5 space-y-2 mt-2 text-muted-foreground text-base">
                             {Array.isArray(exp.description) ? (
                                 exp.description.map((item, i) => (
                                     <li key={i}>{item}</li>
