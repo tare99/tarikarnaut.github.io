@@ -1,0 +1,7 @@
+# Robots.txt for tarikarnaut.github.io
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tarikarnaut.github.io/sitemap.xml
+
