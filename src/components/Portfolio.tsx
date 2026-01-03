@@ -64,7 +64,7 @@ const Portfolio = () => {
       companyUrl: "https://sportradar.com/",
       role: "Backend Developer",
       period: "2022 - Present",
-      duration: "3+ years",
+      duration: "4+ years",
       location: "Bosnia and Herzegovina",
       highlights: [
         "Built, shipped, and maintained Java-based microservices in production",
@@ -200,7 +200,7 @@ const Portfolio = () => {
                   Building <span className="text-foreground font-medium">scalable microservices</span>,{" "}
                   <span className="text-foreground font-medium">real-time data pipelines</span>, and{" "}
                   <span className="text-foreground font-medium">payment integrations</span> that power
-                  production systems. 3+ years turning complex business requirements into reliable code.
+                  production systems. 4+ years turning complex business requirements into reliable code.
                 </p>
 
                 {/* CTA Buttons */}
@@ -256,7 +256,7 @@ const Portfolio = () => {
                     />
                     {/* Experience badge */}
                     <div className="absolute -bottom-2 -right-2 bg-card shadow-lg rounded-2xl px-4 py-2 border border-border">
-                      <p className="text-2xl font-bold text-primary">3+</p>
+                      <p className="text-2xl font-bold text-primary">4+</p>
                       <p className="text-xs text-muted-foreground">Years Exp.</p>
                     </div>
                   </div>
