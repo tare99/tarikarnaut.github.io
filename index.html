@@ -3,73 +3,383 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#1a1a2e"/>
+  <title>Tarik Arnaut - Software Engineer</title>
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Primary Meta Tags -->
-  <title>Tarik Arnaut | Backend Developer | Java & Spring Boot Expert</title>
-  <meta name="title" content="Tarik Arnaut | Backend Developer | Java & Spring Boot Expert"/>
-  <meta name="description" content="Senior Backend Developer with 4+ years at Sportradar building scalable microservices, real-time data pipelines, and payment integrations. Expert in Java, Spring Boot, Kafka, and Kubernetes."/>
-  <meta name="author" content="Tarik Arnaut"/>
-  <meta name="keywords" content="Backend Developer, Java Developer, Spring Boot, Kafka, Kubernetes, Microservices, Software Engineer, Bosnia Herzegovina, Sportradar"/>
-  <meta name="robots" content="index, follow"/>
-  <link rel="canonical" href="https://tarikarnaut.github.io/"/>
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #1a1a2e;
+      color: #e0e0e0;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://tarikarnaut.github.io/"/>
-  <meta property="og:title" content="Tarik Arnaut | Backend Developer | Java & Spring Boot Expert"/>
-  <meta property="og:description" content="Senior Backend Developer with 4+ years at Sportradar building scalable microservices, real-time data pipelines, and payment integrations."/>
-  <meta property="og:image" content="https://tarikarnaut.github.io/og-image.png"/>
-  <meta property="og:site_name" content="Tarik Arnaut Portfolio"/>
+    a {
+      color: #64b5c6;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:url" content="https://tarikarnaut.github.io/"/>
-  <meta name="twitter:title" content="Tarik Arnaut | Backend Developer | Java & Spring Boot Expert"/>
-  <meta name="twitter:description" content="Senior Backend Developer with 4+ years at Sportradar building scalable microservices, real-time data pipelines, and payment integrations."/>
-  <meta name="twitter:image" content="https://tarikarnaut.github.io/og-image.png"/>
+    a:hover {
+      color: #90cad6;
+      text-decoration: underline;
+    }
 
-  <!-- Preconnect to external resources -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    nav {
+      width: 100%;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid #2a2a4a;
+    }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    nav .nav-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Tarik Arnaut",
-    "url": "https://tarikarnaut.github.io",
-    "image": "https://tarikarnaut.github.io/profile-photo.png",
-    "jobTitle": "Backend Developer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Sportradar"
-    },
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "MSc IT & Business Intelligence"
-    },
-    "knowsAbout": ["Java", "Spring Boot", "Kafka", "Kubernetes", "Microservices", "Backend Development"],
-    "sameAs": [
-      "https://github.com/tare99",
-      "https://linkedin.com/in/tarik-arnaut-ab41b8198"
-    ]
-  }
-  </script>
+    nav a.brand {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.02em;
+    }
 
-  <!-- Theme Color -->
-  <meta name="theme-color" content="#1877f2"/>
+    nav a.brand:hover {
+      text-decoration: none;
+      color: #64b5c6;
+    }
+
+    main {
+      max-width: 700px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+      flex: 1;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero .profile-photo {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2a2a4a;
+      margin-bottom: 1rem;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .socials a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #3a3a5a;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+
+    .socials a:hover {
+      border-color: #64b5c6;
+      background-color: rgba(100, 181, 198, 0.08);
+      text-decoration: none;
+    }
+
+    .socials svg {
+      width: 20px;
+      height: 20px;
+      fill: #e0e0e0;
+      transition: fill 0.2s;
+    }
+
+    .socials a:hover svg {
+      fill: #64b5c6;
+    }
+
+    .intro {
+      margin-bottom: 3rem;
+    }
+
+    .intro h2 {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #999;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro .greeting {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+    }
+
+    .stats {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      border-top: 1px solid #2a2a4a;
+      padding-top: 1.25rem;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .stat-row .label {
+      color: #888;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .stat-row .value {
+      text-align: right;
+      color: #e0e0e0;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #2a2a4a;
+    }
+
+    .projects {
+      margin-bottom: 3rem;
+    }
+
+    .project-card {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid #222244;
+    }
+
+    .project-card:last-child {
+      border-bottom: none;
+    }
+
+    .project-card .project-header {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .project-card .project-thumb {
+      width: 80px;
+      height: 56px;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 1px solid #2a2a4a;
+      flex-shrink: 0;
+      background-color: #222244;
+    }
+
+    .project-card .project-info {
+      flex: 1;
+    }
+
+    .project-card .project-name {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .project-card .project-desc {
+      font-style: italic;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin: 0.3rem 0 0.4rem;
+    }
+
+    .project-card .project-stack {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #888;
+    }
+
+    /* ── Companies ──────────────────────────────────── */
+    .companies {
+      margin-bottom: 3rem;
+    }
+
+    .company-entry {
+      padding: 0.75rem 0;
+    }
+
+    .company-entry .company-name {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .company-entry .current-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #64b5c6;
+      background-color: rgba(100, 181, 198, 0.12);
+      padding: 0.1rem 0.5rem;
+      border-radius: 4px;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .company-entry .company-duration {
+      font-style: italic;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 0.15rem;
+    }
+
+    .publications {
+      margin-bottom: 3rem;
+    }
+
+    .publication-entry {
+      padding: 0.75rem 0;
+    }
+
+    .publication-entry a {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #555;
+      font-size: 0.85rem;
+      border-top: 1px solid #2a2a4a;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1.5rem 1rem 2rem;
+      }
+
+      .intro .greeting {
+        font-size: 1.4rem;
+      }
+
+      .stat-row {
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+
+      .stat-row .value {
+        text-align: left;
+      }
+
+      .project-card .project-header {
+        flex-direction: column;
+      }
+
+      .project-card .project-thumb {
+        width: 100%;
+        height: auto;
+        max-height: 160px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <!-- Skip to main content for accessibility -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded">
-    Skip to main content
-  </a>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="brand">Tarik Arnaut</a>
+  </div>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <img
+        src="profile-photo.png"
+        alt="Tarik Arnaut"
+        class="profile-photo"
+    />
+    <div class="socials">
+      <a href="https://linkedin.com/in/tarik-arnaut-ab41b8198" target="_blank"
+         rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+      <a href="https://github.com/tare99" target="_blank" rel="noopener noreferrer"
+         aria-label="GitHub">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>Software Engineer</h2>
+    <p class="greeting">Hello, I am Tarik.</p>
+    <div class="stats">
+      <div class="stat-row">
+        <span class="label">Education</span>
+        <span class="value">Master's degree at Business ICT</span>
+      </div>
+      <div class="stat-row">
+        <span class="label">Development Experience</span>
+        <span class="value">4 years</span>
+      </div>
+      <div class="stat-row">
+        <span class="label">Current Stack</span>
+        <span class="value">Java, Spring Boot, Docker, Kafka, Microservices</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="companies">
+    <h3 class="section-title">Companies I have worked for</h3>
+
+    <div class="company-entry">
+      <div>
+        <a href="https://sportradar.com" target="_blank" rel="noopener noreferrer"
+           class="company-name">Sportradar</a>
+        <span class="current-badge">current</span>
+      </div>
+      <p class="company-duration">4 years</p>
+    </div>
+  </section>
+
+  <section class="publications">
+    <h3 class="section-title">Publications</h3>
+
+    <div class="publication-entry">
+      <a href="https://link.springer.com/chapter/10.1007/978-3-032-05159-2_6" target="_blank" rel="noopener noreferrer">From Restricted Boltzmann Machines to Deep Belief Networks</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Tarik Arnaut. All rights reserved.
+</footer>
+
 </body>
 </html>
